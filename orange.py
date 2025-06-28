@@ -10,6 +10,7 @@ class Solution:
         time=0
         rot= collections.deque()
 
+        #getting all the fresh ones and appending location of rotten ones
         for i in range(rows):
             for j in range(cols):
                 if(grid[i][j]==1):
@@ -18,7 +19,10 @@ class Solution:
                     rot.append((i,j))
         
         directions=([0,1],[0,-1],[1,0],[-1,0])
-
+        #for BFS
+            # Now while we got fresh and rot
+            # then pop the coordinates  then go over direction to change it to 2
+        
         while (fresh>0 and rot):
             length= len(rot)
             for q in range(length):
